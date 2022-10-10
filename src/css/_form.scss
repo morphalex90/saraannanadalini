@@ -1,0 +1,22 @@
+.form {
+    &__field {
+        margin-bottom: 15px;
+
+        label {
+            display: block;
+            // font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            color: #2b2b2b;
+            padding: 8px 10px 7px;
+            max-width: 375px;
+            width: 100%;
+        }
+    }
+}

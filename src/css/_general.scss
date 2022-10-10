@@ -1,0 +1,161 @@
+@font-face {
+    font-family: "Brandon";
+    src: url("../fonts/Brandon_light.otf");
+    src: local("../Brandon_light.otf"), url("../fonts/Brandon_light.otf") format("opentype");
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Brandon", monospace;
+    font-size: 100%;
+    // font-style: inherit;
+    // font-weight: inherit;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+}
+
+.visually-hidden {
+    background-color: #fff;
+    padding: 7px 3px;
+    border-radius: 0 0 3px 3px;
+    position: absolute;
+    left: 20px;
+    transform: translateY(-370%);
+    transition: transform 325ms ease-in;
+    color: #000 !important;
+    z-index: 1000;
+
+    &:focus {
+        transform: translateY(0);
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+
+    &.border-round {
+        border-radius: 20px;
+    }
+}
+
+a {
+    color: #000;
+    transition: all 0.4s;
+
+    &:hover {
+        color: #ff1493;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 12px;
+    text-align: center;
+
+    @media only screen and (min-width: 768px) {
+        text-align: left;
+        font-size: 30px;
+    }
+
+    .aside & {
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 1;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+h2 {
+    font-size: 16px;
+}
+
+.main {
+    width: 100%;
+    margin-top: 10px;
+
+    @media only screen and (min-width: 768px) {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 20px;
+    }
+
+    aside {
+        width: 100%;
+
+        @media only screen and (min-width: 768px) {
+            max-width: 210px;
+        }
+    }
+
+    main {
+        // border: 1px solid green;
+        width: 100%;
+
+        @media only screen and (min-width: 768px) {
+            max-width: calc(100% - 210px - 20px);
+        }
+    }
+
+    .footer {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.d-flex {
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        > * {
+            flex-grow: 1;
+            flex-basis: 0;
+        }
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.button {
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid grey;
+    padding: 3px 9px;
+    text-decoration: none;
+
+    &.--twitter {
+        background-color: #1d9bf0;
+        color: #fff;
+        border: none;
+        font-weight: bold;
+        font-size: 13px;
+    }
+}

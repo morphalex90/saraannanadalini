@@ -1,0 +1,45 @@
+.aside {
+    // border: 1px solid red;
+
+    @media only screen and (min-width: 768px) {
+        padding: 0 30px;
+    }
+
+    &__container {
+        position: relative;
+        @media only screen and (max-width: 768px) {
+            // 768 and down
+
+            max-width: 95%;
+            margin: auto;
+            padding: 0;
+        }
+    }
+
+    &__toggle-mobile-menu {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 22px;
+        width: 40px;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+
+        @media only screen and (min-width: 768px) {
+            display: none;
+        }
+
+        span {
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: black;
+            margin-bottom: 5px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

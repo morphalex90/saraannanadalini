@@ -1,0 +1,44 @@
+.main-menu {
+    margin-top: 22px;
+    text-align: right;
+    display: none;
+
+    @media only screen and (min-width: 768px) {
+        text-align: left;
+        display: block;
+    }
+
+    .--menu-open & {
+        display: block;
+
+        @media only screen and (max-width: 768px) {
+            // 768 and down
+            position: absolute;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid grey;
+            padding: 20px;
+            top: 11px;
+            z-index: 2;
+        }
+    }
+
+    ul {
+        padding-left: 0;
+        margin: 0;
+        list-style-type: none;
+        li {
+            padding-bottom: 15px;
+
+            a {
+                font-size: 13px;
+                text-transform: uppercase;
+                text-decoration: none;
+
+                &:hover {
+                    color: grey;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.section {
+    &__container {
+        @media only screen and (max-width: 768px) {
+            // 768 and down
+            width: 95%;
+            margin: auto;
+        }
+    }
+}
