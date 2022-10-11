@@ -9,7 +9,7 @@ function InPerson() {
 	return (
 		<>
 			<Head>
-				<link rel="canonical" href={process.env.NEXT_PUBLIC_APP_URL} />
+				<link rel="canonical" href={process.env.NEXT_PUBLIC_APP_URL + '/in-person'} />
 				<title>In person - In time - Sara Anna Nadalini</title>
 				{/* <meta name="description" content="" /> */}
 
@@ -17,7 +17,7 @@ function InPerson() {
 				<meta property="og:title" content="In person - In time - Sara Anna Nadalini" />
 				{/* <meta property="og:description" content="" /> */}
 				<meta property="og:image" content={process.env.NEXT_PUBLIC_APP_URL + sara.src} />
-				<meta property="og:url" content={process.env.NEXT_PUBLIC_APP_URL} />
+				<meta property="og:url" content={process.env.NEXT_PUBLIC_APP_URL + '/in-person'} />
 			</Head>
 
 			<Layout className="page-in-person">
