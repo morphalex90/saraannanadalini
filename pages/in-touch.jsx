@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Layout from '@layouts/Layout';
 
 import background from '@img/form_background.png';
+import sara from '@img/sara.webp';
 
 function InTouch() {
 
@@ -36,13 +37,13 @@ function InTouch() {
 		<>
 			<Head>
 				<link rel="canonical" href={process.env.NEXT_PUBLIC_APP_URL} />
-				<title>In touch - In time</title>
-				<meta name="description" content="PHP / Js Developer in love with Next.js, London based" />
+				<title>In touch - In time - Sara Anna Nadalini</title>
+				{/* <meta name="description" content="" /> */}
 
 				<meta property="og:type" content="profile" />
-				<meta property="og:title" content="In touch - In time" />
-				<meta property="og:description" content="PHP / Js Developer in love with Next.js, London based" />
-				<meta property="og:image" content="" />
+				<meta property="og:title" content="In touch - In time - Sara Anna Nadalini" />
+				{/* <meta property="og:description" content="" /> */}
+				<meta property="og:image" content={process.env.NEXT_PUBLIC_APP_URL + sara.src} />
 				<meta property="og:url" content={process.env.NEXT_PUBLIC_APP_URL} />
 			</Head>
 

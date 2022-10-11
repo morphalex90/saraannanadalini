@@ -1,18 +1,20 @@
 import Head from 'next/head';
 import Layout from '@layouts/Layout';
 
+import sara from '@img/sara.webp';
+
 function Homepage() {
 	return (
 		<>
 			<Head>
 				<link rel="canonical" href={process.env.NEXT_PUBLIC_APP_URL} />
 				<title>Sara Anna Nadalini - In time</title>
-				<meta name="description" content="PHP / Js Developer in love with Next.js, London based" />
+				{/* <meta name="description" content="" /> */}
 
 				<meta property="og:type" content="profile" />
 				<meta property="og:title" content="Sara Anna Nadalini - In time" />
-				<meta property="og:description" content="PHP / Js Developer in love with Next.js, London based" />
-				<meta property="og:image" content="" />
+				{/* <meta property="og:description" content="" /> */}
+				<meta property="og:image" content={process.env.NEXT_PUBLIC_APP_URL + sara.src} />
 				<meta property="og:url" content={process.env.NEXT_PUBLIC_APP_URL} />
 			</Head>
 
