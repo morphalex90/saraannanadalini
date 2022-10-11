@@ -1,11 +1,37 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Layout from '@layouts/Layout';
-import Image from 'next/image';
 
 import background from '@img/form_background.png';
-import Link from 'next/link';
 
 function InTouch() {
+
+	const [contact, setContact] = useState({ name: '', email: '', message: '' });
+	const [response, setResponse] = useState('');
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setContact({ ...contact, [name]: value });
+	}
+
+	const handlePress = (e) => {
+		e.preventDefault();
+
+		fetch('/api/send-email', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ name: contact.name, email: contact.email, message: contact.message })
+		})
+			.then(response => response.json())
+			.then(data => {
+				// console.log(data);
+				setResponse(data.success === true ? 'Thank you! I\'ll get back to you shortly' : 'There was an error, please try again');
+			})
+			.catch(error => {
+				console.error(error.toString());
+				setResponse('There was an error, please try again');
+			});
+	}
+
 	return (
 		<>
 			<Head>
@@ -25,29 +51,26 @@ function InTouch() {
 					<div className="section__container">
 						<h1>In touch</h1>
 
-						<form className="form" style={{ background: '#d8d8d8 url(' + background.src + ')', backgroundSize: 'contain', padding: 10 }}>
+						<form className="form" onSubmit={handlePress} style={{ background: '#d8d8d8 url(' + background.src + ')', backgroundSize: 'contain', padding: 10 }}>
 							<div className="form__field">
 								<label htmlFor="name">Your name *</label>
-								<input type="text" name="name" id="name" value="" placeholder="Jon Doe" required />
+								<input type="text" name="name" id="name" placeholder="Jon Doe" onChange={handleChange} required />
 							</div>
 
 							<div className="form__field">
 								<label htmlFor="email">Your email *</label>
-								<input type="email" name="email" id="email" value="" placeholder="jon@doe.com" required />
-							</div>
-
-							<div className="form__field">
-								<label htmlFor="subject">Subject</label>
-								<input type="text" name="subject" id="subject" value="" placeholder="jon@doe.com" />
+								<input type="email" name="email" id="email" placeholder="jon@doe.com" onChange={handleChange} required />
 							</div>
 
 							<div className="form__field">
 								<label htmlFor="message">Your message *</label>
-								<textarea name="message" id="message" value="" placeholder="Message to Jon Doe" cols="40" rows="10" ></textarea>
+								<textarea name="message" id="message" placeholder="Message to Jon Doe" onChange={handleChange} cols="40" rows="10"></textarea>
 							</div>
 
 							<button className="button" type="submit">Make a contact</button>
 						</form>
+
+						<div style={{ marginTop: 20 }} >{response}</div>
 					</div>
 
 				</section>
