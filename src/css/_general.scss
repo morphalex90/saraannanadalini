@@ -52,7 +52,7 @@ a {
     transition: all 0.4s;
 
     &:hover {
-        color: #ff1493;
+        color: grey;
     }
 }
 
@@ -145,11 +145,12 @@ h2 {
 }
 
 .button {
-    border-radius: 10px;
+    border-radius: 2px;
     background-color: white;
     border: 1px solid grey;
-    padding: 3px 9px;
+    padding: 5px 12px;
     text-decoration: none;
+    cursor: pointer;
 
     &.--twitter {
         background-color: #1d9bf0;
