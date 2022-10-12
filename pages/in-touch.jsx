@@ -55,17 +55,17 @@ function InTouch() {
 						<form className="form" onSubmit={handlePress} style={{ background: '#d8d8d8 url(' + background.src + ')', backgroundSize: 'contain', padding: 10 }}>
 							<div className="form__field">
 								<label htmlFor="name">Your name *</label>
-								<input type="text" name="name" id="name" placeholder="Jon Doe" onChange={handleChange} required />
+								<input type="text" name="name" id="name" onChange={handleChange} required />
 							</div>
 
 							<div className="form__field">
 								<label htmlFor="email">Your email *</label>
-								<input type="email" name="email" id="email" placeholder="jon@doe.com" onChange={handleChange} required />
+								<input type="email" name="email" id="email" onChange={handleChange} required />
 							</div>
 
 							<div className="form__field">
 								<label htmlFor="message">Your message *</label>
-								<textarea name="message" id="message" placeholder="Message to Jon Doe" onChange={handleChange} cols="40" rows="10"></textarea>
+								<textarea name="message" id="message" onChange={handleChange} cols="40" rows="10"></textarea>
 							</div>
 
 							<button className="button" type="submit">Make a contact</button>
