@@ -6,15 +6,17 @@ import background from '@img/form_background.png';
 import sara from '@img/sara.webp';
 
 function InTouch() {
-
+	const [isLoading, setIsLoading] = useState(false);
 	const [contact, setContact] = useState({ name: '', email: '', message: '' });
 	const [response, setResponse] = useState('');
+
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setContact({ ...contact, [name]: value });
 	}
 
 	const handlePress = (e) => {
+		setIsLoading(true);
 		e.preventDefault();
 
 		fetch('/api/send-email', {
@@ -26,10 +28,12 @@ function InTouch() {
 			.then(data => {
 				// console.log(data);
 				setResponse(data.success === true ? 'Thank you! I\'ll get back to you shortly' : 'There was an error, please try again');
+				setIsLoading(false);
 			})
 			.catch(error => {
 				console.error(error.toString());
 				setResponse('There was an error, please try again');
+				setIsLoading(false);
 			});
 	}
 
@@ -55,20 +59,20 @@ function InTouch() {
 						<form className="form" onSubmit={handlePress} style={{ background: '#d8d8d8 url(' + background.src + ')', backgroundSize: 'contain', padding: 10 }}>
 							<div className="form__field">
 								<label htmlFor="name">Your name *</label>
-								<input type="text" name="name" id="name" onChange={handleChange} required />
+								<input type="text" name="name" id="name" onChange={handleChange} value={contact.name} required />
 							</div>
 
 							<div className="form__field">
 								<label htmlFor="email">Your email *</label>
-								<input type="email" name="email" id="email" onChange={handleChange} required />
+								<input type="email" name="email" id="email" onChange={handleChange} value={contact.email} required />
 							</div>
 
 							<div className="form__field">
 								<label htmlFor="message">Your message *</label>
-								<textarea name="message" id="message" onChange={handleChange} cols="40" rows="10"></textarea>
+								<textarea name="message" id="message" onChange={handleChange} cols="40" rows="10" value={contact.message} required></textarea>
 							</div>
 
-							<button className="button" type="submit">Make a contact</button>
+							<button className="button" type="submit" disabled={isLoading}>{isLoading ? 'Sending...' : 'Make a contact'}</button>
 						</form>
 
 						<div style={{ marginTop: 20 }} >{response}</div>
