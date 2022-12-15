@@ -21,7 +21,7 @@ function Homepage() {
 			<Layout className="page-homepage">
 				<section className="section" style={{ position: 'relative', paddingTop: '56%' }}>
 					{/* style={{ height: 'calc(100vh - 57px - 26px)' }} */}
-					<iframe style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} src="https://player.vimeo.com/video/232340480" width="640" height="360" frameBorder="0" webkitallowfullscreen mozallowfullscreen allowFullscreen></iframe>
+					<iframe style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} src="https://player.vimeo.com/video/232340480" width="640" height="360" frameBorder="0" webkitallowfullscreen mozallowfullscreen allowFullScreen></iframe>
 				</section>
 			</Layout>
 		</>
