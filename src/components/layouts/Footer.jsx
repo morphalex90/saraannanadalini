@@ -5,7 +5,7 @@ function Footer() {
         <footer className="footer">
             <div className="footer__container">
                 <div className="footer__menu">
-                    <Link href="/"><a>Sara Anna Nadalini</a></Link>
+                    <Link href="/">Sara Anna Nadalini</Link>
                 </div>
 
                 <div className="footer__copy">
