@@ -29,11 +29,11 @@ function InPerson() {
 							<p>Would you like to collaborate on a photo/video project? Please <Link href="/in-touch">contact me!</Link></p>
 
 							<div style={{ maxWidth: 600, margin: 'auto' }}>
-								<Image src={sara} alt="Sara Anna Nadalini" title="Sara Anna Nadalini" />
+								<Image src={sara} alt="Sara Anna Nadalini" title="Sara Anna Nadalini" priority />
 							</div>
 
 							<br />
-							<Link href="https://twitter.com/intent/follow?&screen_name=SarinoElu"><a target="_blank" className="button --twitter">Follow @SarinoElu</a></Link>
+							<Link href="https://twitter.com/intent/follow?&screen_name=SarinoElu" target="_blank" className="button --twitter">Follow @SarinoElu</Link>
 						</div>
 					</div>
 
