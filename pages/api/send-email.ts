@@ -18,11 +18,11 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
         return sgMail
             .send(msg)
             .then((sent) => {
-                console.log(sent);
+                // console.log(sent);
                 return res.json({ success: true });
             })
             .catch((err) => {
-                console.log(err);
+                // console.log(err);
                 return res.status(500).json({ error: err.message, success: false });
             });
     }
