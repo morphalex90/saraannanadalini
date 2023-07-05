@@ -75,7 +75,7 @@ function InTouch() {
 							<button className="button" type="submit" disabled={isLoading}>{isLoading ? 'Sending...' : 'Make a contact'}</button>
 						</form>
 
-						<div style={{ marginTop: 20 }} >{response}</div>
+						<div style={{ marginTop: 20 }}>{response}</div>
 					</div>
 
 				</section>
