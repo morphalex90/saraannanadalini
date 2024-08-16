@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import Layout from '@layouts/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
+import Layout from '@/components/Layout';
 
-import sara from '@img/sara.webp';
+import sara from '@/img/sara.webp';
 
 function InPerson() {
 	return (

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import Menu from '@layouts/Menu';
+import Menu from '@/components/Menu';
 
 function Aside() {
-
     const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
+
     return (
         <aside className={'aside' + (toggleMobileMenu ? ' --menu-open' : '')}>
             <div className="aside__container">

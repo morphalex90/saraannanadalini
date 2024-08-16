@@ -21,15 +21,6 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ],
-      "@css/*": [
-        "./src/css/*"
-      ],
-      "@img/*": [
-        "./src/img/*"
-      ],
-      "@layouts/*": [
-        "./src/components/layouts/*"
       ]
     }
   },

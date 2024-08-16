@@ -1,21 +1,21 @@
-import { useState } from 'react';
+import { useState, FormEventHandler } from 'react';
 import Head from 'next/head';
-import Layout from '@layouts/Layout';
+import Layout from '@/components/Layout';
 
-import background from '@img/form_background.png';
-import sara from '@img/sara.webp';
+import background from '@/img/form_background.png';
+import sara from '@/img/sara.webp';
 
-function InTouch() {
+export default function InTouch() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [contact, setContact] = useState({ name: '', email: '', message: '' });
 	const [response, setResponse] = useState('');
 
-	const handleChange = (e) => {
+	const handleChange = (e: any) => {
 		const { name, value } = e.target;
 		setContact({ ...contact, [name]: value });
 	}
 
-	const handlePress = (e) => {
+	const handlePress = (e: any) => {
 		setIsLoading(true);
 		e.preventDefault();
 
@@ -69,7 +69,7 @@ function InTouch() {
 
 							<div className="form__field">
 								<label htmlFor="message">Your message *</label>
-								<textarea name="message" id="message" onChange={handleChange} cols="40" rows="10" value={contact.message} required></textarea>
+								<textarea name="message" id="message" onChange={handleChange} cols={40} rows={10} value={contact.message} required></textarea>
 							</div>
 
 							<button className="button" type="submit" disabled={isLoading}>{isLoading ? 'Sending...' : 'Make a contact'}</button>
@@ -83,5 +83,3 @@ function InTouch() {
 		</>
 	);
 }
-
-export default InTouch;

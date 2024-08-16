@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-function Menu() {
+export default function Menu() {
+
     return (
         <nav className="main-menu">
             <ul>
@@ -15,5 +16,3 @@ function Menu() {
         </nav>
     );
 }
-
-export default Menu;

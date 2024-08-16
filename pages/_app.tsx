@@ -1,4 +1,4 @@
-import '@css/index.scss';
+import '@/css/index.scss';
 import type { AppProps } from 'next/app';
 import Script from 'next/script';
 
