@@ -1,4 +1,4 @@
-import { useState, FormEventHandler } from 'react';
+import { useState, FormEventHandler, ChangeEvent } from 'react';
 import Head from 'next/head';
 import Layout from '@/components/Layout';
 
@@ -10,12 +10,12 @@ export default function InTouch() {
 	const [contact, setContact] = useState({ name: '', email: '', message: '' });
 	const [response, setResponse] = useState('');
 
-	const handleChange = (e: any) => {
+	const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
 		const { name, value } = e.target;
 		setContact({ ...contact, [name]: value });
 	}
 
-	const handlePress = (e: any) => {
+	const handleSubmit: FormEventHandler = (e) => {
 		setIsLoading(true);
 		e.preventDefault();
 
@@ -56,7 +56,7 @@ export default function InTouch() {
 					<div className="section__container">
 						<h1>In touch</h1>
 
-						<form className="form" onSubmit={handlePress} style={{ background: '#d8d8d8 url(' + background.src + ')', backgroundSize: 'contain', padding: 10 }}>
+						<form className="form" onSubmit={handleSubmit} style={{ background: '#d8d8d8 url(' + background.src + ')', backgroundSize: 'contain', padding: 10 }}>
 							<div className="form__field">
 								<label htmlFor="name">Your name *</label>
 								<input type="text" name="name" id="name" onChange={handleChange} value={contact.name} required />

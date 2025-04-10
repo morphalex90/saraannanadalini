@@ -17,7 +17,7 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
 
         return sgMail
             .send(msg)
-            .then((sent) => {
+            .then(() => {
                 // console.log(sent);
                 return res.json({ success: true });
             })
