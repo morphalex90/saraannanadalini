@@ -1,27 +1,27 @@
 {
   "name": "sara_anna_nadalini",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint"
   },
   "dependencies": {
-    "@sendgrid/mail": "^8.1.5",
-    "next": "^15.5.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "sass": "^1.86.3"
+    "@sendgrid/mail": "^8.1.6",
+    "next": "16.1.4",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "sass": "^1.97.2"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
-    "eslint-config-next": "^15.5.7",
+    "eslint-config-next": "16.1.4",
     "typescript": "^5"
   }
 }
