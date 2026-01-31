@@ -1,9 +1,9 @@
 @font-face {
-    font-family: "Brandon";
-    src: url("../fonts/Brandon_light.otf");
+    font-family: 'Brandon';
+    src: url('../fonts/Brandon_light.otf');
     src:
-        local("../Brandon_light.otf"),
-        url("../fonts/Brandon_light.otf") format("opentype");
+        local('../Brandon_light.otf'),
+        url('../fonts/Brandon_light.otf') format('opentype');
 }
 
 *,
@@ -14,7 +14,7 @@
 
 body {
     margin: 0;
-    font-family: "Brandon", monospace;
+    font-family: 'Brandon', monospace;
     font-size: 100%;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;

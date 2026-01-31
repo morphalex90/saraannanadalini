@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import Menu from '@/components/Menu';
+import Menu from '@/components/Menu'
+import Link from 'next/link'
+import { useState } from 'react'
 
 export default function Aside() {
-    const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
+    const [toggleMobileMenu, setToggleMobileMenu] = useState(false)
 
     return (
         <aside className={'aside' + (toggleMobileMenu ? ' --menu-open' : '')}>
@@ -19,5 +19,5 @@ export default function Aside() {
                 <Menu />
             </div>
         </aside>
-    );
+    )
 }
