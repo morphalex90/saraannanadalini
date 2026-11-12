@@ -1,5 +1,5 @@
-import Layout from '@/components/Layout'
 import Head from 'next/head'
+import Layout from '@/components/Layout'
 
 import sara from '@/img/sara.webp'
 
@@ -21,7 +21,14 @@ export default function Homepage() {
             <Layout className="page-homepage">
                 <section className="section" style={{ position: 'relative', paddingTop: '56%' }}>
                     <iframe
-                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                        style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                        }}
+                        title="Sara Anna Nadalini video"
                         src="https://player.vimeo.com/video/232340480"
                         width="640"
                         height="360"

@@ -1,6 +1,6 @@
-import Layout from '@/components/Layout'
 import Head from 'next/head'
-import { ChangeEvent, FormEventHandler, useState } from 'react'
+import { type ChangeEvent, type FormEventHandler, useState } from 'react'
+import Layout from '@/components/Layout'
 
 import background from '@/img/form_background.png'
 import sara from '@/img/sara.webp'
@@ -22,7 +22,11 @@ export default function InTouch() {
         fetch('/api/send-email', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: contact.name, email: contact.email, message: contact.message }),
+            body: JSON.stringify({
+                name: contact.name,
+                email: contact.email,
+                message: contact.message,
+            }),
         })
             .then((response) => response.json())
             .then((data) => {
@@ -40,7 +44,7 @@ export default function InTouch() {
     return (
         <>
             <Head>
-                <link rel="canonical" href={process.env.NEXT_PUBLIC_APP_URL + '/in-touch'} />
+                <link rel="canonical" href={`${process.env.NEXT_PUBLIC_APP_URL}/in-touch`} />
                 <title>In touch - In time - Sara Anna Nadalini</title>
                 {/* <meta name="description" content="" /> */}
 
@@ -48,7 +52,7 @@ export default function InTouch() {
                 <meta property="og:title" content="In touch - In time - Sara Anna Nadalini" />
                 {/* <meta property="og:description" content="" /> */}
                 <meta property="og:image" content={process.env.NEXT_PUBLIC_APP_URL + sara.src} />
-                <meta property="og:url" content={process.env.NEXT_PUBLIC_APP_URL + '/in-touch'} />
+                <meta property="og:url" content={`${process.env.NEXT_PUBLIC_APP_URL}/in-touch`} />
             </Head>
 
             <Layout className="page-in-touch">
@@ -59,7 +63,11 @@ export default function InTouch() {
                         <form
                             className="form"
                             onSubmit={handleSubmit}
-                            style={{ background: '#d8d8d8 url(' + background.src + ')', backgroundSize: 'contain', padding: 10 }}
+                            style={{
+                                background: `#d8d8d8 url(${background.src})`,
+                                backgroundSize: 'contain',
+                                padding: 10,
+                            }}
                         >
                             <div className="form__field">
                                 <label htmlFor="name">Your name *</label>

@@ -1,12 +1,12 @@
-import Menu from '@/components/Menu'
 import Link from 'next/link'
 import { useState } from 'react'
+import Menu from '@/components/Menu'
 
 export default function Aside() {
     const [toggleMobileMenu, setToggleMobileMenu] = useState(false)
 
     return (
-        <aside className={'aside' + (toggleMobileMenu ? ' --menu-open' : '')}>
+        <aside className={`aside${toggleMobileMenu ? ' --menu-open' : ''}`}>
             <div className="aside__container">
                 <h1 className="text-center">
                     <Link href="/">Sara Anna Nadalini</Link>
