@@ -22,7 +22,11 @@ export default function InTouch() {
         fetch('/api/send-email', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: contact.name, email: contact.email, message: contact.message }),
+            body: JSON.stringify({
+                name: contact.name,
+                email: contact.email,
+                message: contact.message,
+            }),
         })
             .then((response) => response.json())
             .then((data) => {
@@ -59,7 +63,11 @@ export default function InTouch() {
                         <form
                             className="form"
                             onSubmit={handleSubmit}
-                            style={{ background: '#d8d8d8 url(' + background.src + ')', backgroundSize: 'contain', padding: 10 }}
+                            style={{
+                                background: '#d8d8d8 url(' + background.src + ')',
+                                backgroundSize: 'contain',
+                                padding: 10,
+                            }}
                         >
                             <div className="form__field">
                                 <label htmlFor="name">Your name *</label>
