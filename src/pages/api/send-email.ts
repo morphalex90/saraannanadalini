@@ -1,5 +1,5 @@
 import sgMail from '@sendgrid/mail'
-import { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === 'POST') {
@@ -8,9 +8,9 @@ const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
 
         const msg = {
             to: 'saraannanadalini@gmail.com',
-            from: name + ' <info@saraannanadalini.com>', // Use the email address or domain you verified above
+            from: `${name} <info@saraannanadalini.com>`, // Use the email address or domain you verified above
             replyTo: email,
-            subject: 'New contact from ' + name + ' <' + email + '>',
+            subject: `New contact from ${name} <${email}>`,
             text: message,
             html: message,
         }

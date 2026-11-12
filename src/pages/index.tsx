@@ -1,5 +1,5 @@
-import Layout from '@/components/Layout'
 import Head from 'next/head'
+import Layout from '@/components/Layout'
 
 import sara from '@/img/sara.webp'
 
@@ -28,6 +28,7 @@ export default function Homepage() {
                             width: '100%',
                             height: '100%',
                         }}
+                        title="Sara Anna Nadalini video"
                         src="https://player.vimeo.com/video/232340480"
                         width="640"
                         height="360"
